@@ -1,0 +1,36 @@
+<p>This should show a list of all heroes in the system, displaying all the information from the entry captured in the view before.
+    Each hero in the listing needs to be able to be deleted from the system in the event of their unfortunate demise.</p>
+
+    <div class='container'>
+  <h1>Hero List</h1>
+  <form>
+    <input ng-model="hlc.newHero.persona" placeholder="Persona">
+    <input ng-model="hlc.newHero.alias" placeholder="Alias">
+    <input ng-model="hlc.newHero.power_id" placeholder="Power">
+    <input ng-model="hlc.newHero.description" placeholder="Description">
+    <button id="inputButton" ng-click="hlc.hero.addHero(hlc.newHero)">Click here to add a new hero!</button>
+  </form>
+  <table align = "center">
+    <thead>
+      <tr>
+        <th>Persona</th>
+        <th>Alias</th>
+        <th>Power</th>
+        <th>Description</th>
+        <th>Delete</th>
+        <th>Save</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="hero in hlc.heroList">
+        <td><input ng-model="hero.persona"></td>
+        <td><input ng-model="hero.alias"></td>
+        <td><input ng-model="hero.power_id"></td>
+        <td><input ng-model="hero.description"></td>
+        <td><button class="deleteButton" type="button" ng-click="hlc.deleteHero(hero.id)">Delete</button></td>
+        <td><button class="saveButton "ng-click="hlc.saveHero(hero)">Save</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>{{hlc.heroList.alias}}</p>
+</div>
